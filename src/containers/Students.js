@@ -13,7 +13,8 @@ const Students = () => {
         })
     }, [])
     
-   
+   const studentsList = students.map(st => <)
+
   return (
     <div>
       

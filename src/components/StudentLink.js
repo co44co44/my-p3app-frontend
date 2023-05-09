@@ -1,6 +1,6 @@
 import React from 'react'
 
-const TeacherLink = () => {
+const StudentLink = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const TeacherLink = () => {
   )
 }
 
-export default TeacherLink
+export default StudentLink
