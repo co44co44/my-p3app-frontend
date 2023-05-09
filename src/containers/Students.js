@@ -5,7 +5,7 @@ const Students = () => {
     const [studentForm, setStudentsForm] = useState(false)
 
     useEffect(()=> {
-        fetch('http://localhost:9292')
+        fetch('http://localhost:9292/students')
         .then(res=> res.json())
         .then(data => {
             console.log(data)
