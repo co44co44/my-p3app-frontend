@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import StudentLink from '../components/StudentLink.js';
 
 const Students = () => {
     const [students, setStudents] = useState([])
@@ -13,11 +14,14 @@ const Students = () => {
         })
     }, [])
     
-   const studentsList = students.map(st => <)
-
+   const studentsList = students.map( st => <StudentLink key={st.id} student={st} />)
+   
   return (
     <div>
-      
+      <ul>
+        
+        {studentsList}
+      </ul>
     </div>
   )
 }
