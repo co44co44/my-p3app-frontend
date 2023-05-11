@@ -7,21 +7,39 @@ const Students = () => {
 
     useEffect(() => {
         fetch('http://localhost:9292/students')
-        .then(res=> res.json())
+        .then(res => res.json())
         .then(data => {
-            console.log(data)
+            
             setStudents(data)
         })
     }, [])
     
    const studentsList = students.map( st => <StudentLink key={st.id} student={st} />)
    
+    const handleOnSubmit = (e) => {
+      console.log("Im handleOnSubmit")
+      e.preventDefault()
+      setStudentsForm('')
+    }
+
+    const handleOnChange = (e) => {
+      setStudentsForm(e.target.value)
+    }
+
   return (
     <div>
+      <br/>
       <ul>
-        
         {studentsList}
       </ul>
+      <hr/>
+      <form onSubmit={handleOnSubmit}>
+        <label> <h3>ADD A NEW STUDENT:</h3> </label>
+        <br></br>
+        <label> Name: </label>
+        <input type="text" value={studentForm} onChange={handleOnChange}></input>
+        <button type="submit">  SUBMIT  </button>
+      </form>
     </div>
   )
 }

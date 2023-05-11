@@ -4,17 +4,17 @@ import Course from '../components/Course'
 
 
 const Student = () => {
-  const {student, setStudent} = useState({
+  const [student, setStudent] = useState({
     courses: []
   })
 
-  const [courseForm, setCourseForm] = useState(false)
+  // const [courseForm, setCourseForm] = useState(false)
 
   const params = useParams()
 
   useEffect(() => {
         fetch(`http://localhost:9292/students/${params.id}`)
-        .then(res=> res.json())
+        .then(res => res.json())
         .then(data => {
             console.log(data)
             setStudent(data)
