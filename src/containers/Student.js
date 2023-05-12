@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import Course from '../components/Course'
+import { NavLink } from "react-router-dom"
+
 
 
 const Student = () => {
@@ -26,6 +28,8 @@ const Student = () => {
     console.log(courses)
   return (
     <div>
+
+       <NavLink className="go_back_link" to= "/students">GO BACK TO STUDENTS</NavLink>
       <h2>{student.name}</h2>
       <br/>
       <h3>Courses:</h3>

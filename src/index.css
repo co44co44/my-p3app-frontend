@@ -43,6 +43,11 @@ h3{
  
  
 }
+
+#go_back_link {
+  align-items: left;
+  justify-content: left;
+}
 p {
   margin-bottom: 1em;
 }
