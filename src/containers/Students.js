@@ -3,7 +3,7 @@ import StudentLink from '../components/StudentLink.js';
 
 const Students = () => {
     const [students, setStudents] = useState([])
-    const [studentForm, setStudentsForm] = useState(false)
+    const [studentForm, setStudentsForm] = useState('')
 
     useEffect(() => {
         fetch('http://localhost:9292/students')
@@ -28,6 +28,7 @@ const Students = () => {
 
   return (
     <div>
+      <h4> Click on the Students button below to see the classes they take: </h4>
       <br/>
       <ul>
         {studentsList}

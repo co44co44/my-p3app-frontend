@@ -22,7 +22,8 @@ const Student = () => {
     }, [])
   
     
-    const courses = student.courses.map( c => <Course key={c.id} course={c}/>)
+    const courses = student.courses.map(course => <Course key={course.id} course={course}/>)
+    console.log(courses)
   return (
     <div>
       <h2>{student.name}</h2>

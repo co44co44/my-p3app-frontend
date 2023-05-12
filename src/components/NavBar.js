@@ -4,6 +4,8 @@ import { NavLink } from "react-router-dom"
 const NavBar =() => {
 
     return (
+        <div>
+        <h1>MY TUTORING TRACKER</h1>
         <nav>
             <NavLink to= "/"> Home </NavLink>
             
@@ -12,7 +14,7 @@ const NavBar =() => {
             <NavLink to= "/contact"> Contact us</NavLink>
             
         </nav>
-
+        </div>
     )
 
 }
