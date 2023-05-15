@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom"
 
 
 
-const Student = () => {
+const Student = ({students}) => {
   const [student, setStudent] = useState({
     courses: []
   })
@@ -15,6 +15,7 @@ const Student = () => {
   const params = useParams()
 
   useEffect(() => {
+    //get one student from all students
         fetch(`http://localhost:9292/students/${params.id}`)
         .then(res => res.json())
         .then(data => {

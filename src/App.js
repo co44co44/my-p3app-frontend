@@ -6,19 +6,37 @@ import Students from './containers/Students';
 import Student from './containers/Student';
 import Contact from './containers/Contact';
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import React, {useState, useEffect} from 'react'
+import StudentForm from './containers/StudentForm';
+import CourseForm from'./containers/CourseForm';
 
 
 function App() {
-  return (
+  const [students, setStudents] = useState([])
+
+  useEffect(() => {
+    fetch('http://localhost:9292/students')
+    .then(res => res.json())
+    .then(data => {
+        setStudents(data)
+    })
+}, [])
+
+const addNewStudent =(newCourseObj)=>{
+  setStudents([...students, newCourseObj])
+}
+  
+return (
     <Router>
       <NavBar />
       <div className="App">
         <Routes>
           <Route exact path="/" element={<Home/>} />
-          <Route exact path="/students" element={<Students/>} />
+          <Route exact path="/students" element={<Students/>} students = {students} />
           <Route path="/students/:id" element={<Student/>} />
-          <Route path="/contact" element={<Contact/>} />
+          <Route exact path="student/new" element ={<StudentForm/>} addNewStudent = {addNewStudent}/>
+          <Route exact path="students/:id/course" element = {<CourseForm/>}/>
+          <Route exact path="/contact" element={<Contact/>} />
         </Routes>
       </div>
     </Router>
