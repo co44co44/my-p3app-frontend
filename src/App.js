@@ -26,14 +26,14 @@ function App() {
 const addNewStudent =(newCourseObj)=>{
   setStudents([...students, newCourseObj])
 }
-
+// console.log({students})
 return (
     <Router>
       <NavBar />
       <div className="App">
         <Routes>
           <Route exact path="/" element={<Home/>} />
-          <Route exact path="/students" element={<Students/>} students = {students} />
+          <Route exact path="/students" element={<Students students = {students}/>} />
           <Route path="/students/:id" element={<Student/>} />
           <Route exact path="student/new" element ={<StudentForm/>} addNewStudent = {addNewStudent}/>
           <Route exact path="students/:id/course" element = {<CourseForm/>}/>
