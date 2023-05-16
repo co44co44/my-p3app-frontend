@@ -3,18 +3,37 @@ import { Container } from 'react-bootstrap'
 
 
 const StudentForm = ({addNewStudent}) => {
-      const [studentName, setStudentsName] = useState('')
 
-      const handleOnSubmit = (e) => {
-      console.log("Im handleOnSubmit")
-      e.preventDefault()
-      setStudentsName('')
+  const [studentName, setStudentName] = useState('')
+      
+  const resetForm = () => {
+      setStudentName("")
+  }
+    const handleOnSubmit = (e) => {
+    console.log("Im handleOnSubmit")
+    e.preventDefault()
+    fetch("http://localhost:9292/students", {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        name:studentName
+      })
+  })
+      .then((r) => r.json())
+      .then((newStudent) => {
+        addNewStudent(newStudent)   
+        resetForm()
+      })
     }
 
-    const handleOnChange = (e) => {
-      setStudentsName(e.target.value)
-      console.log("im handle OnChange")
-    }
+  const handleOnChange = (e) => {
+    setStudentName(e.target.value)
+    console.log("im handle OnChange")
+  }
+  
+ 
   return (
     <div>
       <h3>ADD A NEW STUDENT:</h3>

@@ -1,11 +1,10 @@
-import { NavLink } from "react-router-dom"
+import { Link } from "react-router-dom"
 import StudentLink from '../components/StudentLink.js';
-
+import Student from "./Student.js";
 
 const Students = ({students}) => {
 
-console.log({students})
-
+  console.log ({students})
     const studentsList = students.map(student => <StudentLink key={student.id} student={student} />)
   
     return (
@@ -17,7 +16,9 @@ console.log({students})
         {studentsList}
       </ul>
       <nav>
-        <NavLink to= {"/students/new"}> MY STUDENTS</NavLink>  
+        <Link to= {"/students/new"}> 
+        <button> Add a New Student  </button>
+        </Link>
       </nav>
         <hr/>
     </div>  

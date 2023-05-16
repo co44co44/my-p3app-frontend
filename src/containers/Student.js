@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import Course from '../components/Course'
-import { NavLink } from "react-router-dom"
-
+import { Link } from "react-router-dom"
 
 
 const Student = ({students}) => {
   const [student, setStudent] = useState({
     courses: []
   })
-
-  // const [courseForm, setCourseForm] = useState(false)
-
+  
   const params = useParams()
 
   useEffect(() => {
@@ -27,19 +24,33 @@ const Student = ({students}) => {
     
     const courses = student.courses.map(course => <Course key={course.id} course={course}/>)
     console.log(courses)
+
+// const Student = ({students}) => {
+//   const [student, setStudent] = useState({
+//     courses: []
+//   })
+
+    
+//     const courses = students.courses.map(course => <Course key={course.id} course={course}/>)
+//     console.log(courses)
   return (
     <div>
-
-       <NavLink className="go_back_link" to= "/students">GO BACK TO STUDENTS</NavLink>
-      <h2>{student.name}</h2>
-      <br/>
-      <h3>Courses:</h3>
-      <br/>
-      <ul>
-      {courses}
-      </ul>
-      
-      <br/>
+        <Link className="go_back_link" to= "/students">
+          GO BACK TO YOUR STUDENTS' LIST
+        </Link>
+        
+        <hr/>
+        <h1>{student.name}'s Courses:</h1>
+        <br/>
+        <Link to={`/students/${params.id}/course/new`}> 
+          <button> Add a NEW COURSE for {student.name}  </button> 
+        </Link> 
+        <br/>
+        <br/>
+        <ul>
+        {courses}
+        </ul>
+        <br/>
     </div>
   )
 }
