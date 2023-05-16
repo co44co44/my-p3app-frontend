@@ -1,11 +1,12 @@
 
 import StudentLink from '../components/StudentLink.js';
-// import { Container } from 'react-bootstrap'
-
-const Students = ({students}) => {
 
 
-    const studentsList = students.map( st => <StudentLink key={st.id} student={st} />)
+const Students = ({ students}) => {
+
+console.log({students})
+
+    const studentsList = students.map(st => <StudentLink key={st.id} student={st} />)
   
     return (
     <div>
@@ -15,7 +16,7 @@ const Students = ({students}) => {
       <ul>
         {studentsList}
       </ul>
-      
+        
         <hr/>
     </div>  
   )

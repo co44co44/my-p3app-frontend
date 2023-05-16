@@ -1,18 +1,18 @@
-import React from 'react'
+import { React, useState } from 'react'
 import { Container } from 'react-bootstrap'
 
 
-const StudentForm = () => {
-      const [studentForm, setStudentsForm] = useState('')
+const StudentForm = ({addNewStudent}) => {
+      const [studentName, setStudentsName] = useState('')
 
       const handleOnSubmit = (e) => {
       console.log("Im handleOnSubmit")
       e.preventDefault()
-      setStudentsForm('')
+      setStudentsName('')
     }
 
     const handleOnChange = (e) => {
-      setStudentsForm(e.target.value)
+      setStudentsName(e.target.value)
       console.log("im handle OnChange")
     }
   return (
@@ -21,7 +21,7 @@ const StudentForm = () => {
         <br/>
        <form onSubmit={handleOnSubmit}>
         <label> Name: </label>
-        <input type="text" value={studentForm} onChange={handleOnChange}></input>
+        <input type="text" value={studentName} onChange={handleOnChange}></input>
         <button type="submit">  SUBMIT  </button>
       </form>
     </div>

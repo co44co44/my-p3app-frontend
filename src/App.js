@@ -1,14 +1,15 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import React, {useState, useEffect} from 'react'
+import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 import NavBar from './components/NavBar'
 import Home from './components/Home'
 import Students from './containers/Students';
 import Student from './containers/Student';
 import Contact from './containers/Contact';
-import "bootstrap/dist/css/bootstrap.min.css";
-import React, {useState, useEffect} from 'react'
 import StudentForm from './containers/StudentForm';
 import CourseForm from'./containers/CourseForm';
+
 
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
 const addNewStudent =(newCourseObj)=>{
   setStudents([...students, newCourseObj])
 }
-  
+
 return (
     <Router>
       <NavBar />
