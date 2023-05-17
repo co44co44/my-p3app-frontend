@@ -7,7 +7,7 @@ const Course = ({course}) => {
         <li>
         <h3>Subject:{course.name}</h3>
         <h3>Level:{course.description}</h3>
-        <h3>Book:<img src={course.image_url} alt={course.image_url}/></h3>
+        <h3>Book/Program:<img src={course.image_url} alt={course.image_url}/></h3>
         <h3>Days:{course.days}</h3>
         
          

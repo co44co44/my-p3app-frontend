@@ -44,18 +44,19 @@ const CourseForm = () => {
       <h3>ADD A NEW COURSE :</h3>
         <br/>
        <form onSubmit={handleOnSubmit}>
-        <label> Name: </label>
+        <label> Subject: </label>
         <input type="text"  value={courseName} onChange={e => setCourseName(e.target.value)}></input>
         <br/>
         <label> Level: </label>
         <input type="text"  value={courseDescription} onChange={e => setCourseDescription(e.target.value)}></input>
         <br/>
+        <label> Book/Program: </label>
+        <input type="text"  value={courseImage} onChange={e => setCourseImage(e.target.value)}></input>
+        <br/>
         <label> Days: </label>
         <input type="text"  value={courseDays} onChange={e => setCourseDays(e.target.value)}></input>
         <br/>
-        <label> Image: </label>
-        <input type="text"  value={courseImage} onChange={e => setCourseImage(e.target.value)}></input>
-        <br/>
+        
         <button type="submit">  SUBMIT  </button>
       </form>
     </div>
