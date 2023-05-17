@@ -1,6 +1,6 @@
 import { React, useState } from 'react'
 import { Container } from 'react-bootstrap'
-
+import Students from '../containers/Students'
 
 const StudentForm = ({addNewStudent}) => {
 
@@ -10,23 +10,24 @@ const StudentForm = ({addNewStudent}) => {
       setStudentName("")
   }
     const handleOnSubmit = (e) => {
-    console.log("Im handleOnSubmit")
-    e.preventDefault()
-    fetch("http://localhost:9292/students", {
-      method: "POST",
-      headers: {
-          "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        name:studentName
-      })
-  })
-      .then((r) => r.json())
-      .then((newStudent) => {
-        addNewStudent(newStudent)   
-        resetForm()
-      })
-    }
+      console.log("Im handleOnSubmit")
+      e.preventDefault()
+      
+      fetch("http://localhost:9292/students", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          name:studentName
+        })
+    })
+        .then(r => r.json())
+        .then((newStudent) => {
+          addNewStudent(newStudent)   
+          resetForm()
+        })
+      }
 
   const handleOnChange = (e) => {
     setStudentName(e.target.value)
@@ -36,6 +37,9 @@ const StudentForm = ({addNewStudent}) => {
  
   return (
     <div>
+      
+       <Container>
+        <br/>
       <h3>ADD A NEW STUDENT:</h3>
         <br/>
        <form onSubmit={handleOnSubmit}>
@@ -43,6 +47,7 @@ const StudentForm = ({addNewStudent}) => {
         <input type="text" value={studentName} onChange={handleOnChange}></input>
         <button type="submit">  SUBMIT  </button>
       </form>
+      </Container >
     </div>
   )
 }

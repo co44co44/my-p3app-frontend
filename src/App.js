@@ -18,8 +18,8 @@ function App() {
   useEffect(() => {
     fetch('http://localhost:9292/students')
     .then(res => res.json())
-    .then(data => {
-        setStudents(data)
+    .then(students => {
+        setStudents(students)
     })
 }, [])
 
@@ -29,6 +29,7 @@ const addNewStudent =(newStudent)=>{
 // console.log({students})
 return (
     <Router>
+      
       <NavBar />
       <div className="App">
         <Routes>

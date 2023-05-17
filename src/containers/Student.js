@@ -12,7 +12,6 @@ const Student = ({students}) => {
   const params = useParams()
 
   useEffect(() => {
-    //get one student from all students
         fetch(`http://localhost:9292/students/${params.id}`)
         .then(res => res.json())
         .then(data => {
@@ -25,6 +24,7 @@ const Student = ({students}) => {
     const courses = student.courses.map(course => <Course key={course.id} course={course}/>)
     console.log(courses)
 
+    
 // const Student = ({students}) => {
 //   const [student, setStudent] = useState({
 //     courses: []
