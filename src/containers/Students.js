@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 import StudentLink from '../components/StudentLink.js';
-import StudentForm from "./StudentForm.js";
+
 
 
 const Students = ({students}) => {
@@ -22,7 +22,7 @@ const Students = ({students}) => {
           <button> Add a New Student  </button>
           </Link>
         </nav>
-        {/* <StudentForm/> */}
+      
         <hr/>
     </div>  
   )

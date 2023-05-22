@@ -4,7 +4,7 @@ import Course from '../components/Course'
 import { Link } from "react-router-dom"
 
 
-const Student = ({students}) => {
+const Student = () => {
   const [student, setStudent] = useState({
     courses: []
   })

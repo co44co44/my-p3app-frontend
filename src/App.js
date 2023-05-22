@@ -14,14 +14,19 @@ import CourseForm from'./containers/CourseForm';
 
 function App() {
   const [students, setStudents] = useState([])
+  const [newCourse, setNewCourse] = useState([])
 
   useEffect(() => {
     fetch('http://localhost:9292/students')
     .then(res => res.json())
-    .then(students => {
-        setStudents(students)
+    .then(data => {
+        setStudents(data)
     })
 }, [])
+
+const addNewCourse =(newCourse)=>{
+  setNewCourse((courseObj) => [...courseObj, newCourse])
+} 
 
 const addNewStudent =(newStudent)=>{
   setStudents((studentObj) => [...studentObj, newStudent])
@@ -37,7 +42,7 @@ return (
           <Route exact path="/students" element={<Students students = {students}/>} />
           <Route path="/students/:id" element={<Student/>} />
           <Route exact path="students/new" element ={<StudentForm addNewStudent = {addNewStudent}/>}/>
-          <Route exact path="students/:id/course/new" element = {<CourseForm/>}/>
+          <Route exact path="students/:id/course/new" element = {<CourseForm addNewCourse = {addNewCourse}  newCourse = {newCourse}/>}/>
           <Route exact path="/contact" element={<Contact/>} />
         </Routes>
       </div>
