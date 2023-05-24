@@ -1,18 +1,15 @@
 import { React, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
-//TO DO: FALTA ADDNEWCOURSE, FIJARSE COMO HACER.
+
 const CourseForm = ({addNewCourse}) => {
-  // const [newCourse, setNewCourse] = useState([])
   const [courseName, setCourseName] = useState('')
   const [courseDescription, setCourseDescription] = useState('')
   const [courseImage, setCourseImage] = useState('')
   const [courseDays, setCourseDays] = useState('')
 
   const params = useParams()
-// const addNewCourse =(newCourse)=>{
-//   setNewCourse((courseObj) => [...courseObj, newCourse])
-// } 
+
   const resetForm = () => {
       setCourseName('')
       setCourseDescription('')
@@ -23,13 +20,6 @@ const CourseForm = ({addNewCourse}) => {
     console.log("Im handleOnSubmitCourse")
     e.preventDefault()
     
-    // const newCourse= {
-    //   name:courseName,
-    //   description:courseDescription,
-    //   image_url: courseImage,
-    //   days: courseDays
-      
-    // } 
 
     fetch("http://localhost:9292/courses", {
       method: "POST",

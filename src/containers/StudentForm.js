@@ -13,6 +13,7 @@ const StudentForm = ({addNewStudent}) => {
       console.log("Im handleOnSubmit")
       e.preventDefault()
       
+      
       fetch("http://localhost:9292/students", {
         method: "POST",
         headers: {
@@ -23,10 +24,10 @@ const StudentForm = ({addNewStudent}) => {
         })
     })
         .then(r => r.json())
-        .then((newStudent) => {
-          addNewStudent(newStudent)   
+        .then((newStudent) => addNewStudent(newStudent)   )
           resetForm()
-        })
+          // console.log(newStudent)
+        
       }
 
   const handleOnChange = (e) => {
@@ -36,16 +37,17 @@ const StudentForm = ({addNewStudent}) => {
   
  
   return (
-    <div>
+    <div  style={{background: "white" }} >
       
        <Container>
         <br/>
-      <h3>ADD A NEW STUDENT:</h3>
-        <br/>
+      <h3 style={{color: "black"}}>ADD A NEW STUDENT:</h3>
+        
        <form onSubmit={handleOnSubmit}>
         <label> Name: </label>
         <input type="text" value={studentName} onChange={handleOnChange}></input>
         <button type="submit">  SUBMIT  </button>
+        <hr/>
       </form>
       </Container >
     </div>

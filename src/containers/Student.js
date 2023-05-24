@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import Course from '../components/Course'
 import { Link } from "react-router-dom"
+import CourseForm from './CourseForm'
 
 
 const Student = () => {
@@ -10,7 +11,7 @@ const Student = () => {
   })
   
   const params = useParams()
-
+// find by id instead of fetch
   useEffect(() => {
         fetch(`http://localhost:9292/students/${params.id}`)
         .then(res => res.json())
@@ -20,7 +21,7 @@ const Student = () => {
         })
     }, [])
   
-    
+    //should be in app.js and pass it here
     const courses = student.courses.map(course => <Course key={course.id} course={course}/>)
     console.log(courses)
 
@@ -45,6 +46,7 @@ const Student = () => {
         <Link to={`/students/${params.id}/course/new`}> 
           <button> Add a NEW COURSE for {student.name}  </button> 
         </Link> 
+        {/* <CourseForm/> */}
         <br/>
         <br/>
         <ul>

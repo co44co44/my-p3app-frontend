@@ -11,7 +11,6 @@ import StudentForm from './containers/StudentForm';
 import CourseForm from'./containers/CourseForm';
 
 
-
 function App() {
   const [students, setStudents] = useState([])
   const [newCourse, setNewCourse] = useState([])
@@ -24,12 +23,27 @@ function App() {
     })
 }, [])
 
+  // useEffect(() => {
+  //   fetch('http://localhost:9292/courses')
+  //   .then(res => res.json())
+  //   .then(data => {
+  //       setNewCourse(data)
+  //   })
+  // }, [])
+
 const addNewCourse =(newCourse)=>{
   setNewCourse((courseObj) => [...courseObj, newCourse])
 } 
 
 const addNewStudent =(newStudent)=>{
   setStudents((studentObj) => [...studentObj, newStudent])
+}
+
+const onDeleteStudent =(id) => {
+  setStudents(prevStudents => {
+    const filteredArray = prevStudents.filter(student=> student.id !== id )
+    return filteredArray})
+
 }
 // console.log({students})
 return (
@@ -39,9 +53,9 @@ return (
       <div className="App">
         <Routes>
           <Route exact path="/" element={<Home/>} />
-          <Route exact path="/students" element={<Students students = {students}/>} />
-          <Route path="/students/:id" element={<Student/>} />
-          <Route exact path="students/new" element ={<StudentForm addNewStudent = {addNewStudent}/>}/>
+          <Route exact path="/students" element={<Students onDeleteStudent = {onDeleteStudent} students = {students}/>} />
+          <Route path="/students/:id" element={<Student />} />
+          <Route exact path="students/new" element ={<StudentForm  addNewStudent = {addNewStudent}/>}/>
           <Route exact path="students/:id/course/new" element = {<CourseForm addNewCourse = {addNewCourse}  newCourse = {newCourse}/>}/>
           <Route exact path="/contact" element={<Contact/>} />
         </Routes>

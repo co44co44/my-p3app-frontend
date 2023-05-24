@@ -7,7 +7,8 @@ const NavBar =() => {
     return (
         <div>
         <img src= "logo192.png"></img>
-        <h1>MY TUTORING TRACKER</h1>
+        
+        <h1> MY TUTORING TRACKER</h1>
             <nav>
                 <NavLink to= "/"> Home </NavLink>
                 
