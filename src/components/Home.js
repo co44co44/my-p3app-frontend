@@ -1,6 +1,10 @@
 import React from 'react'
+// import { Link } from "react-router-dom"
+
 
 const Home =() => {
+
+
     return (
         <div>
             <br/>
@@ -12,6 +16,9 @@ const Home =() => {
                 <br/>
                 and the courses you teach them! </h3>
             
+        {/* <Link to={`/students`}> 
+          <button className='My_Students'> MY STUDENTS </button> 
+        </Link>  */}
         </div>
 
     )

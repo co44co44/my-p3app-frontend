@@ -5,12 +5,13 @@ import { NavLink } from "react-router-dom"
 const NavBar =() => {
 
     return (
+        // <div style = {{background:"black"}}>
         <div>
-        <img src= "logo192.png"></img>
+        {/* <img  src= "tracker.png"></img> */}
         
-        <h1> MY TUTORING TRACKER</h1>
             <nav>
-                <NavLink to= "/"> Home </NavLink>
+            <img src= "tracker.png"></img>
+                <NavLink to= "/"> About Us </NavLink>
                 
                 <NavLink to= "/students"> MY STUDENTS</NavLink>
             

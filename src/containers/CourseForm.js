@@ -49,7 +49,7 @@ const CourseForm = ({addNewCourse}) => {
        <br/>
        <form onSubmit={handleOnSubmit}>
 
-          <h3>ADD A NEW COURSE :</h3>
+          <h3>ADD A NEW COURSE:</h3>
           <br/>
           <label> Subject: </label>
           <input type="text"  value={courseName} onChange={e => setCourseName(e.target.value)}></input>
