@@ -1,4 +1,4 @@
-import { React, useState } from 'react'
+import React, { useState } from 'react'
 import { Container } from 'react-bootstrap'
 // import Students from '../containers/Students'
 
@@ -9,7 +9,7 @@ const StudentForm = ({addNewStudent}) => {
   const resetForm = () => {
       setStudentName("")
   }
-    const handleOnSubmit = (e) => {
+  const handleOnSubmit = (e) => {
       console.log("Im handleOnSubmit")
       e.preventDefault()
       

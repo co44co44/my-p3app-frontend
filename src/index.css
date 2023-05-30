@@ -89,14 +89,12 @@ image, img {
   margin-right: auto;
   
 }
-#bulb {
-  background-color: rgb(54, 170, 238);
-  font-size: 20.2em;
-}
+
 #delete_button {
-  border:  solid #a49797;
+  border:  solid hwb(150 96% 0%);
+  color: rgb(247, 239, 239);
   border-radius: 5px;
-  padding: 0.1px;
+  padding: 0.5px;
   width: 25px;
   align-items:baseline;
   justify-content:end;
@@ -110,11 +108,11 @@ image, img {
   grid-template-rows: max-content 200px;
   height: 200px;
   display: block;
-  float: left;
+  float:left;
   box-sizing:inherit;
-  width: 250px;;
+  width: 200px;;
   align-content: auto;
-  border: solid #34bedc 10px;
+  border: solid #000809 10px;
   padding: 10px;
   height: 200px;
   
