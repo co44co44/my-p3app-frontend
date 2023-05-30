@@ -6,6 +6,7 @@ import NavBar from './components/NavBar'
 import Home from './components/Home'
 import Students from './containers/Students';
 import Student from './containers/Student';
+
 import Contact from './containers/Contact';
 import StudentForm from './containers/StudentForm';
 import CourseForm from'./containers/CourseForm';

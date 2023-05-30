@@ -14,18 +14,18 @@ const StudentForm = ({addNewStudent}) => {
       e.preventDefault()
       
       
-      fetch("http://localhost:9292/students", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          name:studentName
-        })
-    })
-        .then(r => r.json())
-        .then((newStudent) => addNewStudent(newStudent)   )
-          resetForm()
+    //   fetch("http://localhost:9292/students", {
+    //     method: "POST",
+    //     headers: {
+    //         "Content-Type": "application/json"
+    //     },
+    //     body: JSON.stringify({
+    //       name:studentName
+    //     })
+    // })
+    //     .then(r => r.json())
+    //     .then((newStudent) => addNewStudent(newStudent)   )
+    //       resetForm()
           // console.log(newStudent)
         
       }
