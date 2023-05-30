@@ -14,14 +14,15 @@ const Students = ({students, onDeleteStudent}) => {
     return (
     <div>
         <nav>
-          <Link to= {"/students/new"}> 
-          <button> Add a New Student  </button>
-          </Link>
+         
           {/* <StudentForm/> */}
         </nav>
         <br/>
-          <h2> Click on the Student's name to see the classes they take: </h2>
+          <h2> MY STUDENTS:  </h2>
         <br/>
+        <Link to= {"/students/new"}> 
+          <button> Add a New Student  </button>
+        </Link>
         <ul>
           {studentsList}
         </ul>
